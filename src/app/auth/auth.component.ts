@@ -14,7 +14,7 @@ export class AuthComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
-    this.authStatus = this.authService.getIsAuth();
+    this.authStatus = this.authService.isAuth;
   }
 
   onSignIn() {
@@ -22,7 +22,7 @@ export class AuthComponent implements OnInit {
       () => {
         console.log('Sign in successful!');
         this.authStatus = this.authService.isAuth;
-        this.router.navigate(['appareils']);
+        this.router.navigate(['/appareils']);
       });
   }
 
